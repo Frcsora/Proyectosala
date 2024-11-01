@@ -37,7 +37,7 @@ function determinarTemporada(fecha) {
 
 //..................................................//
 //FUNCIÓN PROGRAMAR RECORDATORIOfunction programarRecordatorio(diasAntes){
-function programarRecordatorio(evento, diasAntes){
+function programarRecordatorio(evento, diasAntes){//FRANCESC: he modificado esta funcion
   const fecha  = new Date(Date.now())
   const [dias,horas] = calculoDias(fecha, fechaConcierto);
   if(dias < diasAntes){
@@ -50,7 +50,7 @@ function programarRecordatorio(evento, diasAntes){
     horas > 1 ? " " + horas + " horas" : "")))
     }
 }
-setInterval(function(){
+setInterval(function(){//FRANCESC: he añadido esto
   eventos.forEach((evento) =>
     programarRecordatorio(evento, evento.remember),
   )
@@ -67,7 +67,7 @@ function imprimirEventos() {
     const fechaConcierto = new Date(evento.fecha);
     const [diasRestantes, horasRestantes] = calculoDias(fecha, fechaConcierto);
     const temporada = determinarTemporada(fechaConcierto);
-    if(diasRestantes >= 0){
+    if(diasRestantes >= 0){//FRANCESC: he añadido un if else que se asegura de que no pongan dias anteriores al actual
       const divEvento = document.createElement("div");
     divEvento.className = "evento";
 
@@ -161,7 +161,7 @@ function crearEvento() {
   let artista = document.querySelector(
     'input[placeholder="Nombre Del Artista"]'
   ).value;
-  let recordatorio = document.getElementById("diasAntes").value;
+  let recordatorio = document.getElementById("diasAntes").value;//FRANCESC: necesitaba esto para programar recordatorio
   artista = validarNombreArtista(artista);
   const idConcierto = generarIDConcierto(fechaConcierto, precioBase);
   const nuevoEvento = {
@@ -171,7 +171,7 @@ function crearEvento() {
     capacidad,
     descripcion: artista,
     hora,
-    remember: recordatorio
+    remember: recordatorio//FRANCESC: esto tambien
   };
 
   eventos.push(nuevoEvento);
