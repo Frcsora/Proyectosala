@@ -39,7 +39,7 @@ function determinarTemporada(fecha) {
 //FUNCIÓN PROGRAMAR RECORDATORIOfunction programarRecordatorio(diasAntes){
 function programarRecordatorio(evento, diasAntes){//FRANCESC: he modificado esta funcion
   const fecha  = new Date(Date.now())
-  const [dias,horas] = calculoDias(fecha, fechaConcierto);
+  const [dias,horas] = calculoDias(fecha, fechaConcierto);//Francesc, he añadido parametro a la funcion de calculoDias asi que tendras que modificar cuando la llames tambien
   if(dias < diasAntes){
     alert(evento.nombre + ": " + (dias < 0 ?  "No puedes poner una fecha anterior"
     : "Queda" + (dias === 1  ? " " +  dias + " dia" :
