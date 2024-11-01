@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venta tickets</title>
+    <title>Venta de Tickets</title>
     <link rel="stylesheet" href="style.css">
-</head>
-    <body>
-        <button class="boton-sticky">+</button>
-        <h1 class="titulo grande">EVENTOS</h1>
-        <h3 class="titulo pequeño">Abril - 2024</h3>
-        <div class="CreacionInformacion">
-            <input type="text" placeholder="Nombre del evento">
-            <input type="date">
-            <input type="text" placeholder="Capacidad">
-            <input type="time" placeholder="">
-            <input type="text" placeholder="Nombre Del Artista">
-            <input type="number" placeholder="Recordatorio en dias">
-            <button>Crear</button>
-        </div>
-        <script src="time.js"></script>
-        <script src="numerString.js"></script>
-    </body> 
+  </head>
+  <body>
+    <button class="boton-sticky">+</button>
+    <div class="titulos">
+      <h1 class="titulo grande">EVENTOS</h1>
+      <h2 class="titulo pequeño">próximos</h2>
+    </div>
+    <div class="CreacionInformacion">
+      <input type="text" id="nombreEvento" placeholder="Nombre del evento">
+      <br>
+      <input type="date" id="fechaConcierto">
+      <br>
+      <input type="number" id="capacidad" placeholder="Capacidad">
+      <br>
+      <input type="time" id="horaConcierto">
+      <br>
+      <input type="text" id="artista" placeholder="Nombre Del Artista">
+      <br>
+      <input type="number" id="diasAntes" placeholder="Días recordatorio">
+      <br><br>
+      <div class="boton-contenedor">
+        <button id="crear-evento">Ver Evento</button>
+      </div>
+    </div>
+    <div id="eventos"></div>
+    <script src="global.js"></script>
+  </body>
 </html>
